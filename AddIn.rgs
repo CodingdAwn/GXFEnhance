@@ -1,0 +1,54 @@
+HKCR
+{
+	GXFEnhance.Connect.1 = s 'Connect Class'
+	{
+		CLSID = s '{35CECA9D-CB2D-4D49-AD5E-AA387468F754}'
+	}
+	GXFEnhance.Connect = s 'Connect Class'
+	{
+		CLSID = s '{35CECA9D-CB2D-4D49-AD5E-AA387468F754}'
+		CurVer = s 'GXFEnhance.Connect.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove '{35CECA9D-CB2D-4D49-AD5E-AA387468F754}' = s 'Connect Class'
+		{
+			ProgID = s 'GXFEnhance.Connect.1'
+			VersionIndependentProgID = s 'GXFEnhance.Connect'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{BC8C91F4-8D6B-4FDE-9911-5312FD80EC93}'
+		}
+	}
+}
+
+HKCU
+{
+	NoRemove 'SOFTWARE'
+	{
+		NoRemove 'Microsoft'
+		{
+			NoRemove 'VisualStudio'
+			{
+				NoRemove '9.0'
+				{
+					NoRemove 'AddIns'
+					{
+						ForceRemove 'GXFEnhance.Connect'
+						{
+							val LoadBehavior = d 1
+							val CommandLineSafe = d 0
+							val CommandPreload = d 1
+							val FriendlyName = s 'GXFEnhance - dAwn_'
+							val Description = s 'GXFEnhance - dAwn_'
+						}
+					}
+				}
+			}
+		}
+	}
+
+}

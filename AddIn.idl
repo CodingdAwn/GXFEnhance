@@ -1,0 +1,26 @@
+// AddIn.idl : 外接程序的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(AddIn.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(BC8C91F4-8D6B-4FDE-9911-5312FD80EC93),
+	version(1.0),
+	helpstring("GXFEnhance 1.0 Type Library")
+]
+library GXFEnhanceLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(35CECA9D-CB2D-4D49-AD5E-AA387468F754),
+		helpstring("Connect Class")
+	]
+	coclass Connect
+	{
+		[default] interface IUnknown;
+	};
+};
